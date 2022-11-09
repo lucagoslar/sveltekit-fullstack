@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
+import { alias } from './sass-alias.js';
 import path from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */

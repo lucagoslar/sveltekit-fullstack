@@ -5,7 +5,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import svg from 'vite-plugin-svelte-svg';
 import { imagetools } from 'vite-imagetools';
 import type { UserConfig } from 'vite';
-import { alias } from './sass-alias';
+import { alias } from './sass-alias.js';
 
 const config: UserConfig = {
 	css: {
