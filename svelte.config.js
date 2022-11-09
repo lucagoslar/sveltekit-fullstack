@@ -16,7 +16,8 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
-			$i18n: path.join('src', 'i18n')
+			$i18n: path.join('src', 'i18n'),
+			$scss: path.join('src', 'lib', 'global', 'scss')
 		}
 	}
 };

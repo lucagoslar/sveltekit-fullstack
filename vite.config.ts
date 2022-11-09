@@ -6,15 +6,19 @@ import svg from 'vite-plugin-svelte-svg';
 import { imagetools } from 'vite-imagetools';
 import type { UserConfig } from 'vite';
 import { alias } from './sass-alias.js';
+import { fileURLToPath, URL } from 'url';
+import path from 'path';
+
+const css = {
+	preprocessorOptions: {
+		scss: {
+			importer: [alias.resolve.bind(alias)]
+		}
+	}
+};
 
 const config: UserConfig = {
-	css: {
-		preprocessorOptions: {
-			scss: {
-				importer: [alias.resolve.bind(alias)]
-			}
-		}
-	},
+	css,
 	plugins: [
 		sveltekit(),
 		svg({
@@ -32,7 +36,16 @@ const config: UserConfig = {
 	],
 	histoire: {
 		plugins: [HstSvelte()],
-		setupFile: './src/histoire.setup.ts'
+		setupFile: './src/histoire.setup.ts',
+		vite: {
+			css,
+			resolve: {
+				alias: {
+					$i18n: fileURLToPath(new URL(path.join('src', 'i18n'), import.meta.url)),
+					$scss: fileURLToPath(new URL(path.join('src', 'lib', 'global', 'scss'), import.meta.url))
+				}
+			}
+		}
 	}
 };
 
