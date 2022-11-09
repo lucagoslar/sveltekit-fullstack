@@ -6,7 +6,11 @@ import path from 'path';
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: preprocess(),
+	preprocess: preprocess({
+		scss: {
+			importer: [alias.resolve.bind(alias)]
+		}
+	}),
 
 	kit: {
 		adapter: adapter(),

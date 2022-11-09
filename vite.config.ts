@@ -5,8 +5,16 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import svg from 'vite-plugin-svelte-svg';
 import { imagetools } from 'vite-imagetools';
 import type { UserConfig } from 'vite';
+import { alias } from './sass-alias';
 
 const config: UserConfig = {
+	css: {
+		preprocessorOptions: {
+			scss: {
+				importer: [alias.resolve.bind(alias)]
+			}
+		}
+	},
 	plugins: [
 		sveltekit(),
 		svg({

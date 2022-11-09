@@ -41,6 +41,7 @@
 		"svelte-check": "^2.7.1",
 		"svelte-meta-tags": "^2.6.3",
 		"svelte-preprocess": "^4.10.6",
+		"svelte-preprocess-sass-alias-import": "^0.1.0",
 		"trpc-sveltekit": "^2.3.7",
 		"tslib": "^2.3.1",
 		"typesafe-i18n": "^5.16.3",
