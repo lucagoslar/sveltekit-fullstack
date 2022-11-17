@@ -8,7 +8,8 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true
+		"strict": true,
+		"noEmit": true
 	},
 	"include": [
 		"ambient.d.ts",
@@ -23,7 +24,8 @@
 		"./tests/**/*.js",
 		"./tests/**/*.ts",
 		"./tests/**/*.svelte",
-		"./types/**/*.d.ts"
+		"./types/**/*.d.ts",
+		"./sass-alias.js"
 	]
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//
