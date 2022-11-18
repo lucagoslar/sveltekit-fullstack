@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    # networks:
+    #   - traefik
+    # labels:
+    #   - 'traefik.enable=true'
+    #   - 'traefik.http.routers.sveltekitstarter.rule=Host(`web.docker.localhost`)'
+    #   - 'traefik.http.routers.sveltekitstarter.entrypoints=websecure'
+    #   - 'traefik.http.routers.sveltekitstarter.tls.certresolver=letsencrypt'
+# networks:
+#   traefik:
+#     external: true

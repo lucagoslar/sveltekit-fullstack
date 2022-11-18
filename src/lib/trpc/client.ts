@@ -6,7 +6,7 @@ export default (loadFetch?: LoadEvent['fetch']) =>
 	createTRPCProxyClient<Router>({
 		links: [
 			httpBatchLink({
-				url: import.meta.env.VITE_TRPC
+				url: import.meta.env.DEV ? import.meta.env.VITE_TRPC : import.meta.env.VITE_PROD_TRPC
 			})
 		],
 		...(loadFetch && { fetch: loadFetch as typeof fetch })
