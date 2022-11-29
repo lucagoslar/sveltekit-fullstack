@@ -2,7 +2,7 @@ import { sequence } from '@sveltejs/kit/hooks';
 import { isLocale } from '$i18n/i18n-util';
 import type { Handle } from '@sveltejs/kit';
 import { createTRPCHandle } from 'trpc-sveltekit';
-import { router } from '$lib/trpc/server';
+import { router } from '$lib/server/trpc/server';
 
 const language: Handle = async ({ event, resolve }) => {
 	let [, lang] = event.url.pathname.split('/');

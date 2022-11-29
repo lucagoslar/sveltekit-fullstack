@@ -1,5 +1,5 @@
 import type { LoadEvent } from '@sveltejs/kit';
-import type { Router } from '$lib/trpc/server';
+import type { Router } from '$lib/server/trpc/server';
 import { createTRPCProxyClient, httpBatchLink } from '@trpc/client';
 
 export default (loadFetch?: LoadEvent['fetch']) =>

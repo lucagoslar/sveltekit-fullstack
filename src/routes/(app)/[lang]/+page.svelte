@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { LL } from '$i18n/i18n-svelte';
 	import { MetaTags } from 'svelte-meta-tags';
-	import client from '$lib/trpc/client';
+	import client from '$lib/global/trpc';
 	import { onMount } from 'svelte';
 
 	onMount(() => {

@@ -2,7 +2,7 @@ import type { LayoutServerLoad } from './$types';
 import { baseLocale, locales } from '$i18n/i18n-util';
 import { redirect } from '@sveltejs/kit';
 import parser from 'accept-language-parser';
-import client from '$lib/trpc/client';
+import client from '$lib/global/trpc';
 
 export const load: LayoutServerLoad = async (request) => {
 	const browserLanguage = parser.pick(
