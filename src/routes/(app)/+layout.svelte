@@ -5,6 +5,7 @@
 	import type { Locales } from '$i18n/i18n-types';
 	import { loadLocale } from '$i18n/i18n-util.sync';
 
+	import '$scss/main.scss';
 	import 'normalize.css';
 
 	export let data: LayoutData;
