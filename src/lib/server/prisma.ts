@@ -1,5 +1,7 @@
-import pkg from '@prisma/client';
-const { PrismaClient } = pkg;
+import type { PrismaClient as TypedPrismaClient } from '@prisma/client';
 
-const prismaClient = new PrismaClient();
-export default prismaClient;
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const { PrismaClient } = require('@prisma/client');
+
+export const prisma = new PrismaClient() as TypedPrismaClient;
