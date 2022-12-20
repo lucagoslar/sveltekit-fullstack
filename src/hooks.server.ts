@@ -3,7 +3,7 @@ import { sequence } from '@sveltejs/kit/hooks';
 import type { Handle } from '@sveltejs/kit';
 import type { ValidRoute } from 'trpc-sveltekit/dist/ValidRoute';
 
-import { PUBLIC_TRPC_SLUG } from '$env/static/public';
+import { env } from '$env/dynamic/public';
 
 import { createContext } from '$lib/server/trpc/createContext';
 import { appRouter } from '$lib/server/trpc/_app';
@@ -24,7 +24,7 @@ const language: Handle = async ({ event, resolve }) => {
 };
 
 const trpc: Handle = createTRPCHandle({
-	url: PUBLIC_TRPC_SLUG as ValidRoute<typeof PUBLIC_TRPC_SLUG>,
+	url: env.PUBLIC_TRPC_SLUG as ValidRoute<typeof env.PUBLIC_TRPC_SLUG>,
 	createContext,
 	router: appRouter
 });
