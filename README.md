@@ -13,7 +13,10 @@ npm i
 # apply db migrations to db
 npx prisma migrate dev
 
-# run the development server
+# run histoire
+npm run story:dev
+
+# or run the development server
 npm run dev
 ```
 
