@@ -13,7 +13,7 @@ COPY vite.config.js /app/
 COPY histoire.config.ts /app/
 COPY tsconfig.json /app/
 
-COPY /.env /app/.env
+COPY /.env.production /app/.env
 
 COPY /prisma /app/prisma
 RUN npx -y prisma migrate deploy

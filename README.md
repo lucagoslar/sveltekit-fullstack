@@ -19,7 +19,7 @@ npm run dev
 
 ## Building
 
-You may build for any target wanted. However, this project is preconfigured to operate on Docker. Be sure to adapt your environment variables before running the application.
+You may build for any target wanted. However, this project is preconfigured to operate on Docker. Similar to before, create a copy of `.env.example`. However, name it `.env.production` this time. Take into consideration that your application will use port `3000` in production.
 
 ```bash
 # build and run the image
