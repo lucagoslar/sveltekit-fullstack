@@ -19,11 +19,9 @@ npm run dev
 
 ## Building
 
-You may build for any target wanted. However, this project is preconfigured to operate on Docker.
+You may build for any target wanted. However, this project is preconfigured to operate on Docker. Be sure to adapt your environment variables before running the application.
 
 ```bash
 # build and run the image
 docker-compose up --build
 ```
-
-You can preview the production build with `npm run preview`.

@@ -19,6 +19,13 @@ type RootTranslation = {
 	 * @param {string} name
 	 */
 	HI: RequiredParams<'name'>
+	story: {
+		/**
+		 * C​l​i​c​k​e​d​ ​{​t​i​m​e​s​}​ ​t​i​m​e​s
+		 * @param {number} times
+		 */
+		button: RequiredParams<'times'>
+	}
 }
 
 export type TranslationFunctions = {
@@ -26,6 +33,12 @@ export type TranslationFunctions = {
 	 * Hi {name}! Please leave a star if you like this project: https://github.com/ivanhofer/typesafe-i18n
 	 */
 	HI: (arg: { name: string }) => LocalizedString
+	story: {
+		/**
+		 * Clicked {times} times
+		 */
+		button: (arg: { times: number }) => LocalizedString
+	}
 }
 
 export type Formatters = {}

@@ -1,13 +1,20 @@
+import { SassAlias } from 'svelte-preprocess-sass-alias-import';
 import adapter from '@sveltejs/adapter-node';
-import preprocess from 'svelte-preprocess';
-import { alias } from './sass-alias.js';
+import { vitePreprocess } from '@sveltejs/kit/vite';
 import path from 'path';
+
+export const alias = new SassAlias({
+	$styles: ['src', 'helpers', 'styles']
+});
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
+	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	preprocess: preprocess({
+	preprocess: vitePreprocess({
+		sass: {
+			importer: [alias.resolve.bind(alias)]
+		},
 		scss: {
 			importer: [alias.resolve.bind(alias)]
 		}
@@ -16,8 +23,15 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
+			$assets: path.join('src', 'assets'),
+			$scripts: path.join('src', 'helpers', 'scripts'),
+			$styles: path.join('src', 'helpers', 'styles'),
 			$i18n: path.join('src', 'i18n'),
-			$scss: path.join('src', 'lib', 'global', 'scss')
+			$lib: path.join('src', 'lib'),
+			$atoms: path.join('src', 'lib', 'components', 'atoms'),
+			$molecules: path.join('src', 'lib', 'components', 'molecules'),
+			$organisms: path.join('src', 'lib', 'components', 'organisms'),
+			$components: path.join('src', 'lib', 'components')
 		}
 	}
 };

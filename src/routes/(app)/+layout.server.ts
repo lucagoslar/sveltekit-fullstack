@@ -1,27 +1,23 @@
 import type { LayoutServerLoad } from './$types';
-import { baseLocale, locales } from '$i18n/i18n-util';
+
 import { redirect } from '@sveltejs/kit';
 import parser from 'accept-language-parser';
-import client from '$lib/global/trpc';
 
-export const load: LayoutServerLoad = async (request) => {
-	const browserLanguage = parser.pick(
-		locales,
-		request.request.headers.get('accept-language') || ''
-	);
+import { baseLocale, locales } from '$i18n/i18n-util';
+import type { Locales } from '$i18n/i18n-types';
 
-	let path = request.url.pathname.split('/').filter(Boolean);
+export const load: LayoutServerLoad = async (req) => {
+	const browserLanguage = parser.pick(locales, req.request.headers.get('accept-language') || '');
+	const locale = req.params.locale as Locales;
 
-	if (path.length == 0 || (path.length > 0 && !(locales as [string]).includes(path[0]))) {
-		path.unshift(browserLanguage || baseLocale);
-		throw redirect(308, path.join('/'));
+	if (!locale || !locales.includes(locale)) {
+		let pathname = req.url.pathname.split('/').filter(Boolean);
+		pathname.unshift((browserLanguage as string) || baseLocale);
+
+		throw redirect(308, pathname.join('/'));
 	}
 
-	const user = await client(request.fetch).userById.query('1');
-
-	console.log(user);
-
 	return {
-		language: path[0]
+		locale
 	};
 };

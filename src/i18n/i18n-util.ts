@@ -5,7 +5,7 @@ import { i18n as initI18n, i18nObject as initI18nObject, i18nString as initI18nS
 import type { LocaleDetector } from 'typesafe-i18n/detectors'
 import type { LocaleTranslationFunctions, TranslateByString } from 'typesafe-i18n'
 import { detectLocale as detectLocaleFn } from 'typesafe-i18n/detectors'
-import type { Formatters, Locales, Translations, TranslationFunctions } from './i18n-types'
+import type { Formatters, Locales, Translations, TranslationFunctions } from './i18n-types.js'
 
 export const baseLocale: Locales = 'en'
 

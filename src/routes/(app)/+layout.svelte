@@ -1,17 +1,16 @@
 <script lang="ts">
 	import type { LayoutData } from './$types';
 
-	import { setLocale } from '$i18n/i18n-svelte';
-	import type { Locales } from '$i18n/i18n-types';
-	import { loadLocale } from '$i18n/i18n-util.sync';
-
-	import '$scss/main.scss';
 	import 'normalize.css';
+	import '$styles/main.scss';
+
+	import { setLocale } from '$i18n/i18n-svelte';
+	import { loadLocale } from '$i18n/i18n-util.sync';
 
 	export let data: LayoutData;
 
-	loadLocale(data.language as Locales);
-	setLocale(data.language as Locales);
+	loadLocale(data.locale);
+	setLocale(data.locale);
 </script>
 
 <slot />

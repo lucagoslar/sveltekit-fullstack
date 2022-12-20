@@ -44,3 +44,8 @@ interface ViteImagetoolsMetadata {
 // 	const value: [ViteImagetoolsMetadata];
 // 	export default value;
 // }
+
+declare module '*.avif?width=200&format=jpg&metadata' {
+	const value: ViteImagetoolsMetadata;
+	export default value;
+}

@@ -1,0 +1,10 @@
+@mixin outline($color: #000, $radius: 5px, $offset: 5px) {
+	outline-offset: $offset;
+
+	border-radius: $radius;
+	-moz-outline-radius: $radius;
+
+	&:focus-visible {
+		outline: $color dashed 3px;
+	}
+}

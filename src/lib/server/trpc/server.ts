@@ -1,31 +1,19 @@
-import { initTRPC } from '@trpc/server';
+import { initTRPC, TRPCError } from '@trpc/server';
+import type { Context } from './createContext';
+import { isAuthenticated } from '$lib/server/trpc/middleware/isAuthenticated';
 
-const t = initTRPC.create();
-
-interface User {
-	id: string;
-	name: string;
-}
-
-const userList: User[] = [
-	{
-		id: '1',
-		name: 'Luca'
-	}
-];
-
-export const router = t.router({
-	userById: t.procedure
-		.input((val: unknown) => {
-			if (typeof val === 'string') return val;
-			throw new Error(`Invalid input: ${typeof val}`);
-		})
-		.query((req) => {
-			const { input } = req;
-			const user = userList.find((u) => u.id === input);
-
-			return user;
-		})
+export const t = initTRPC.context<Context>().create({
+	// errorFormatter: ({ shape, error, type, path, input, ctx }) => {
+	// 	console.log('tRPC error:', JSON.stringify({ shape, error, type, path, input, ctx }));
+	// 	return {
+	// 		code: shape.code,
+	// 		message: shape.message
+	// 	};
+	// }
 });
 
-export type Router = typeof router;
+export const router = t.router;
+export const middleware = t.middleware;
+
+export const publicProcedure = t.procedure;
+export const protectedProcedure = t.procedure.use(isAuthenticated());
