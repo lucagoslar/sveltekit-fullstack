@@ -23,12 +23,12 @@
 		"@sveltejs/kit": "^1.0.1",
 		"@trpc/server": "^10.7.0",
 		"@types/accept-language-parser": "^1.5.3",
-		"@typescript-eslint/eslint-plugin": "^5.47.1",
-		"@typescript-eslint/parser": "^5.47.1",
+		"@typescript-eslint/eslint-plugin": "^5.48.0",
+		"@typescript-eslint/parser": "^5.48.0",
 		"autoprefixer": "^10.4.13",
 		"concurrently": "^7.6.0",
-		"eslint": "^8.30.0",
-		"eslint-config-prettier": "^8.5.0",
+		"eslint": "^8.31.0",
+		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"histoire": "^0.12.4",
 		"imagetools-core": "^3.2.3",
@@ -40,11 +40,11 @@
 		"svelte": "^3.55.0",
 		"svelte-check": "^3.0.1",
 		"svelte-preprocess-sass-alias-import": "^1.0.0",
-		"trpc-sveltekit": "^3.2.2",
+		"trpc-sveltekit": "^3.2.3",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.4",
-		"vite": "^4.0.3",
-		"vite-imagetools": "^4.0.12",
+		"vite": "^4.0.4",
+		"vite-imagetools": "^4.0.13",
 		"vite-plugin-svelte-svg": "^2.1.0"
 	},
 	"type": "module",
@@ -52,6 +52,8 @@
 		"@trpc/client": "^10.7.0",
 		"accept-language-parser": "^1.5.0",
 		"normalize.css": "^8.0.1",
-		"typesafe-i18n": "^5.18.0"
+		"svelte-meta-tags": "^2.6.4",
+		"typesafe-i18n": "^5.18.1",
+		"zod": "^3.20.2"
 	}
 }
