@@ -2,8 +2,8 @@ import type { PageServerLoad } from './$types';
 
 import { client } from '$scripts/trcp';
 
-export const load: PageServerLoad = async () => {
+export const load: PageServerLoad = async (event) => {
 	return {
-		userCount: await client.users.count.query()
+		userCount: await client(event).users.count.query()
 	};
 };

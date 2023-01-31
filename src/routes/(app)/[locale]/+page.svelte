@@ -11,7 +11,7 @@
 	export let data: PageData;
 
 	onMount(async () => {
-		console.log(await client.substraction.query({ minuend: 1, subtrahend: 1 }));
+		console.log(await client().substraction.query({ minuend: 1, subtrahend: 1 }));
 	});
 </script>
 
