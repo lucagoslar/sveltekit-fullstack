@@ -23,6 +23,8 @@
 		"./tests/**/*.js",
 		"./tests/**/*.ts",
 		"./tests/**/*.svelte",
+		"./.storybook/**/*.svelte",
+		"./.storybook/**/*.ts",
 		"./types/**/*.d.ts"
 	]
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
