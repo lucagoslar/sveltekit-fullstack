@@ -1,6 +1,6 @@
 # sveltekit-fullstack
 
-Everything you need to build a Svelte project with [Histoire](https://histoire.dev/), [typesafe-i18n](https://github.com/ivanhofer/typesafe-i18n), [Prisma](https://prisma.io/) and [trpc](https://trpc.io/).
+Everything you need to build a Svelte project with [Storybook](https://storybook.js.org/), [typesafe-i18n](https://github.com/ivanhofer/typesafe-i18n), [Prisma](https://prisma.io/) and [trpc](https://trpc.io/).
 
 ## Developing
 
@@ -13,8 +13,8 @@ npm i
 # apply db migrations to db
 npx prisma migrate dev
 
-# run histoire
-npm run story:dev
+# run storybook
+npm run storybook
 
 # or run the development server
 npm run dev

@@ -10,7 +10,7 @@ COPY /static /app/static
 COPY postcss.config.cjs /app/
 COPY svelte.config.js /app/
 COPY vite.config.js /app/
-COPY histoire.config.ts /app/
+COPY /.storybook /app/.storybook
 COPY tsconfig.json /app/
 
 COPY /.env.production /app/.env
