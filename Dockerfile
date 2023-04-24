@@ -16,7 +16,6 @@ COPY tsconfig.json /app/
 COPY /.env.production /app/.env
 
 COPY /prisma /app/prisma
-RUN npx -y prisma migrate deploy
 RUN npx -y prisma generate
 
 COPY /src /app/src
