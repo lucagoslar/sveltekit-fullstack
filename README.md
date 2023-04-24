@@ -14,7 +14,7 @@ npm i
 npx prisma migrate dev
 
 # seed the database (flags '--no-flush' and '--no-seed' available)
-npm run seed
+npm run seed --
 
 # run storybook
 npm run storybook
