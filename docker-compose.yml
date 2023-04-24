@@ -7,13 +7,14 @@ services:
       - '3000:3000'
     env_file:
       - .env.production
-    # networks:
-    #   - traefik
-    # labels:
-    #   - 'traefik.enable=true'
-    #   - 'traefik.http.routers.sveltekitstarter.rule=Host(`web.docker.localhost`)'
-    #   - 'traefik.http.routers.sveltekitstarter.entrypoints=websecure'
-    #   - 'traefik.http.routers.sveltekitstarter.tls.certresolver=letsencrypt'
+#   networks:
+#     - traefik
+#   labels:
+#     - 'traefik.enable=true'
+#     - 'traefik.http.routers.sveltekitfullstack.rule=Host(`web.docker.localhost`)'
+#     - 'traefik.http.routers.sveltekitfullstack.entrypoints=websecure'
+#     - 'traefik.http.routers.sveltekitfullstack.tls.certresolver=letsencrypt'
+#
 # networks:
 #   traefik:
 #     external: true
