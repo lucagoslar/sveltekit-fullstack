@@ -25,7 +25,8 @@
 		"./tests/**/*.svelte",
 		"./.storybook/**/*.svelte",
 		"./.storybook/**/*.ts",
-		"./types/**/*.d.ts"
+		"./types/**/*.d.ts",
+		"./prisma/seed.ts"
 	]
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

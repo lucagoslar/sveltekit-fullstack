@@ -13,6 +13,9 @@ npm i
 # apply db migrations to db
 npx prisma migrate dev
 
+# seed the database (flags '--no-flush' and '--no-seed' available)
+npm run seed
+
 # run storybook
 npm run storybook
 
