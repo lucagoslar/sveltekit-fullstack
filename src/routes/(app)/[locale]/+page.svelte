@@ -6,7 +6,7 @@
 	import type { PageData } from './$types';
 	import Image from '$assets/bigben.avif?width=200&format=jpg&metadata';
 
-	import { client } from '$scripts/trcp';
+	import { client } from '$scripts/trpc';
 
 	export let data: PageData;
 

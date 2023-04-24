@@ -1,12 +1,6 @@
-import { createTRPCHandle } from 'trpc-sveltekit';
 import { sequence } from '@sveltejs/kit/hooks';
 import type { Handle } from '@sveltejs/kit';
-import type { ValidRoute } from 'trpc-sveltekit/dist/ValidRoute';
 
-import { env } from '$env/dynamic/public';
-
-import { createContext } from '$lib/server/trpc/createContext';
-import { appRouter } from '$lib/server/trpc/_app';
 import { isLocale } from '$i18n/i18n-util';
 import { prisma } from '$lib/server/prisma';
 
@@ -23,13 +17,7 @@ const language: Handle = async ({ event, resolve }) => {
 	return await resolve(event);
 };
 
-const trpc: Handle = createTRPCHandle({
-	url: env.PUBLIC_TRPC_SLUG as ValidRoute<typeof env.PUBLIC_TRPC_SLUG>,
-	createContext,
-	router: appRouter
-});
-
-export const handle: Handle = sequence(language, trpc);
+export const handle: Handle = sequence(language);
 
 async function seed() {
 	if (!((await prisma.user.count()) > 0)) {
