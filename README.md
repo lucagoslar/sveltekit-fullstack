@@ -22,7 +22,7 @@ npm run dev
 
 ## Building
 
-You may build for any target wanted. However, this project is preconfigured to operate on Docker. Similar to before, create a copy of `.env.example`. However, name it `.env.production` this time. Take into consideration that your application will use port `3000` in production.
+You may build for any target wanted. However, this project is preconfigured to operate on Docker. Similar to before, create a copy of `.env.example`. However, name it `.env.production` this time. Take into consideration that your application will use port `3000` in production. Before starting the service, apply any pending migrations with `prisma migrate deploy` to your database.
 
 ```bash
 # build and run the image
