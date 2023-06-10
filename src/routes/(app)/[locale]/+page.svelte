@@ -4,7 +4,7 @@
 	import { MetaTags } from 'svelte-meta-tags';
 
 	import type { PageData } from './$types';
-	import Image from '$assets/bigben.avif?width=200&format=jpg&metadata';
+	import Image from '$assets/bigben.avif?width=200&format=jpg&as=meta';
 
 	import { client } from '$scripts/trpc';
 

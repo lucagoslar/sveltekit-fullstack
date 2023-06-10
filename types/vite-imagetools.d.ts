@@ -19,9 +19,6 @@ interface ViteImagetoolsMetadata {
 	/** @param {number} channels - Number of bands e.g. 3 for sRGB, 4 for CMYK */
 	channels: number;
 
-	/** @param {number} density - Number of pixels per inch */
-	density: number;
-
 	/** @param {string} depth - Name of pixel depth format */
 	depth: string;
 
@@ -33,6 +30,15 @@ interface ViteImagetoolsMetadata {
 
 	/** @param {boolean} isProgressive - indicating whether the image is interlaced using a progressive scan */
 	isProgressive: boolean;
+
+	/** @param {string} compression - TODO */
+	compression: string;
+
+	/** @param {number} pages - TODO */
+	pages: number;
+
+	/** @param {number} pagePrimary - TODO */
+	pagePrimary: number;
 }
 
 // declare module '*.png?width=100&format=jpg&metadata' {
@@ -45,7 +51,7 @@ interface ViteImagetoolsMetadata {
 // 	export default value;
 // }
 
-declare module '*.avif?width=200&format=jpg&metadata' {
+declare module '*.avif?width=200&format=jpg&as=meta' {
 	const value: ViteImagetoolsMetadata;
 	export default value;
 }
