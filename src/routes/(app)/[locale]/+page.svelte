@@ -12,6 +12,7 @@
 
 	onMount(async () => {
 		console.log(await client().substraction.query({ minuend: 1, subtrahend: 1 }));
+		console.log(await client().pong.query());
 	});
 </script>
 
