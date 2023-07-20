@@ -1,8 +1,8 @@
-import { middleware } from '$lib/server/trpc/server';
 import { TRPCError } from '@trpc/server';
+import type { t } from '$lib/server/trpc/server';
 
-export const isAuthenticated = () =>
-	middleware(({ next, ctx }) => {
+export const isAuthenticated = ($t: typeof t) =>
+	$t.middleware(({ next, ctx }) => {
 		if (true) {
 			throw new TRPCError({ code: 'UNAUTHORIZED' });
 		}
