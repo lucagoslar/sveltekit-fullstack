@@ -4,7 +4,7 @@
 	import { MetaTags } from 'svelte-meta-tags';
 
 	import type { PageData } from './$types';
-	import Image from '$assets/bigben.avif?width=200&format=jpg&as=meta';
+	import Image from '$assets/bigben.avif?enhanced';
 
 	import { client } from '$scripts/trpc';
 
@@ -26,4 +26,4 @@
 	{data.userCount} user(-s)
 </p>
 
-<img src={Image.src} width={Image.width} height={Image.height} alt="Big Ben" />
+<enhanced:img src={Image} alt="Big Ben" />

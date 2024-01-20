@@ -14,7 +14,7 @@ export const load: LayoutServerLoad = async (event) => {
 		let pathname = event.url.pathname.split('/').filter(Boolean);
 		pathname.unshift((browserLanguage as string) || baseLocale);
 
-		throw redirect(308, pathname.join('/'));
+		redirect(308, pathname.join('/'));
 	}
 
 	return {

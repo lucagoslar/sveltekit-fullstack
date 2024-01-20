@@ -6,17 +6,23 @@
 	button {
 		cursor: pointer;
 
-		min-height: 50px;
-		padding: 0 25px;
+		min-height: 42px;
+		padding: 0 15px;
 
 		outline: 0;
 		border: 0;
 
-		@include a11y.outline(var(--primary));
+		@include a11y.outline();
 
-		border-radius: 25px;
+		border-radius: 7px;
 
-		background-color: var(--primary);
+		background: rgb(0, 0, 0);
+		background: linear-gradient(342deg, rgba(0, 0, 0, 1) 0%, rgba(41, 41, 41, 1) 100%);
+
+		&:active {
+			background: linear-gradient(342deg, rgba(0, 0, 0, 1) 0%, rgb(63, 63, 63) 100%);
+		}
+
 		color: white;
 	}
 </style>
